@@ -4,7 +4,7 @@ export default function Radio() {
       <fieldset className="govgr-fieldset" aria-describedby="radio-country">
         <legend
           role="heading"
-          aria-level="1"
+          aria-level={1}
           className="govgr-fieldset__legend govgr-heading-l"
         >
           Ποια είναι η χώρα της διαμονής σας;

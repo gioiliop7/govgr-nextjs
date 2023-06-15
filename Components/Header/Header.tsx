@@ -1,11 +1,10 @@
-import Head from "next/head";
 import Image from "next/image";
 import govGR from "../../assets/govgr.svg";
+import { GovProps } from "@/utils/types";
 
-export default function Header({serviceName}) {
+export default function Header({ serviceName }: GovProps) {
   return (
     <>
-      <Head></Head>
       <header className="govgr-header w-full min-h-[75px]" role="banner">
         <div className="govgr-admin-header__container h-full">
           <div className="govgr-header__content">

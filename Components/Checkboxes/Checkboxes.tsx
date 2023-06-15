@@ -4,7 +4,7 @@ export default function Checkboxes() {
       <fieldset className="govgr-fieldset">
         <legend
           role="heading"
-          aria-level="1"
+          aria-level={1}
           className="govgr-fieldset__legend govgr-heading-l"
         >
           Πώς αισθάνεται αυτή τη στιγμή;

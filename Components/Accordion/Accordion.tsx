@@ -1,4 +1,6 @@
-export default function Accordion() {
+import React from "react";
+
+function Accordion() {
   return (
     <>
       <div className="govgr-accordion w-full">
@@ -26,7 +28,7 @@ export default function Accordion() {
             </ul>
           </div>
         </details>
-        <details className="govgr-accordion__section" selected>
+        <details className="govgr-accordion__section" open>
           <summary className="govgr-accordion__section-summary">
             <h2 className="govgr-accordion__section-heading">
               <span className="govgr-accordion__section-button">
@@ -113,3 +115,5 @@ export default function Accordion() {
     </>
   );
 }
+
+export default Accordion;

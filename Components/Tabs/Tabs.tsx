@@ -1,9 +1,9 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
-export default function Tabs() {
-  const [activeTab, setActiveTab] = useState("tab1");
+function Tabs(): JSX.Element {
+  const [activeTab, setActiveTab] = useState<string>("tab1");
 
-  const handleTabClick = (tabId) => {
+  const handleTabClick = (tabId: string) => {
     setActiveTab(tabId);
   };
 
@@ -24,7 +24,7 @@ export default function Tabs() {
             role="tab"
             aria-controls="past-week"
             aria-selected={activeTab === "tab1" ? "true" : "false"}
-            tabIndex="-1"
+            tabIndex={-1}
             onClick={() => handleTabClick("tab1")}
           >
             Στοιχεία πολίτη
@@ -43,7 +43,7 @@ export default function Tabs() {
             role="tab"
             aria-controls="user-cases"
             aria-selected={activeTab === "tab2" ? "true" : "false"}
-            tabIndex="-1"
+            tabIndex={-1}
             onClick={() => handleTabClick("tab2")}
           >
             Οι υποθέσεις τους
@@ -62,7 +62,7 @@ export default function Tabs() {
             role="tab"
             aria-controls="history"
             aria-selected={activeTab === "tab3" ? "true" : "false"}
-            tabIndex="-1"
+            tabIndex={-1}
             onClick={() => handleTabClick("tab3")}
           >
             Ιστορικό
@@ -141,3 +141,5 @@ export default function Tabs() {
     </div>
   );
 }
+
+export default Tabs;

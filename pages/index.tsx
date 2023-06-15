@@ -26,7 +26,7 @@ import TextArea from "@/Components/TextArea/TextArea";
 import TextInput from "@/Components/TextInput/TextInput";
 import WarningText from "@/Components/WarningText/WarningText";
 
-export default function Home() {
+export default function Home(): JSX.Element {
   return (
     <main className={`flex min-h-screen flex-col items-center justify-between`}>
       <Header serviceName={"New service"} />

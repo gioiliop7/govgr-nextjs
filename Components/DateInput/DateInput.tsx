@@ -1,19 +1,15 @@
-export default function ErrorMessage() {
+export default function DateInput() {
   return (
-    <div className="govgr-field govgr-field__error">
+    <div className="govgr-field">
       <fieldset className="govgr-fieldset">
         <legend
           role="heading"
-          aria-level="1"
+          aria-level={1}
           className="govgr-fieldset__legend govgr-heading-l"
         >
-          Ποιά είναι η ημερομηνία γέννησης σας;
+          Πότε εκδόθηκε το διαβατήριο σας;
         </legend>
         <p className="govgr-hint">Για παράδειγμα, 05 11 2020</p>
-        <p className="govgr-error-message">
-          <span className="govgr-visually-hidden">Λάθος:</span>Η ημερομηνία
-          γέννησης πρέπει να έχει έτος.
-        </p>
         <div className="govgr-date-input">
           <div className="govgr-date-input__item">
             <label className="govgr-label">
@@ -45,7 +41,7 @@ export default function ErrorMessage() {
             <label className="govgr-label">
               Έτος
               <input
-                className="govgr-input govgr-input--width-4 govgr-error-input"
+                className="govgr-input govgr-input--width-4"
                 type="text"
                 pattern="[0-9]*"
                 inputMode="numeric"
