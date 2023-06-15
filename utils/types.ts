@@ -1,4 +1,4 @@
 export interface GovProps {
-  message: string;
-  serviceName: string;
+  message?: string;
+  serviceName?: string;
 }
