@@ -29,7 +29,9 @@ export default function Accordion() {
         <details className="govgr-accordion__section" selected>
           <summary className="govgr-accordion__section-summary">
             <h2 className="govgr-accordion__section-heading">
-              <span className="govgr-accordion__section-button">Δικαστήρια</span>
+              <span className="govgr-accordion__section-button">
+                Δικαστήρια
+              </span>
             </h2>
           </summary>
           <div className="govgr-accordion__section-content">
@@ -45,7 +47,10 @@ export default function Accordion() {
                 </a>
               </li>
               <li>
-                <a className="govgr-link"> Ηλεκτρονικές δικαστικές αποφάσεις </a>
+                <a className="govgr-link">
+                  {" "}
+                  Ηλεκτρονικές δικαστικές αποφάσεις{" "}
+                </a>
               </li>
               <li>
                 <a className="govgr-link"> Πιστοποιητικά δικαστηρίων </a>
