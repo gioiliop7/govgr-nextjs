@@ -1,9 +1,10 @@
 import Image from "next/image";
 import govGR from "../../assets/govgr.svg";
-import { GovProps } from "@/utils/types";
 import Head from "next/head";
+import packageJson from "../../package.json"
+const appName = packageJson.name;
 
-export default function Header({ serviceName }: GovProps) {
+export default function Header() {
   return (
     <>
       <Head>
@@ -22,7 +23,7 @@ export default function Header({ serviceName }: GovProps) {
                 className="max-w-[30%] my-auto"
                 alt="gov.grlogo"
               />
-              <p className="font-bold text-white text-2xl">{serviceName}</p>
+              <p className="font-bold text-white text-2xl capitalize">{appName}</p>
             </a>
           </div>
         </div>

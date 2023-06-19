@@ -4,7 +4,7 @@ import Header from "@/Components/Header/Header";
 export default function Start() {
   return (
     <div className="govgr-layout-wrapper govgr-layout-wrapper__full-height">
-      <Header serviceName="My service" />
+      <Header />
       <div className="govgr-width-container">
         <div className="govgr-phase-banner govgr-phase-banner__underline">
           <p className="govgr-phase-banner__content">

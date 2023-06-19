@@ -27,10 +27,9 @@ import TextInput from "@/Components/TextInput/TextInput";
 import WarningText from "@/Components/WarningText/WarningText";
 
 export default function Home(): JSX.Element {
-  const serviceName = "New service";
   return (
     <main className={`flex min-h-screen flex-col items-center justify-between`}>
-      <Header serviceName={serviceName} />
+      <Header />
       <div className="w-full flex flex-col items-center max-w-[80%]">
         <h2 className="govgr-heading-l mt-8">Back Link</h2>
         <BackLink />
