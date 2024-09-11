@@ -1,7 +1,8 @@
 import Image from "next/image";
 import govGR from "../../assets/govgr.svg";
 import Head from "next/head";
-import packageJson from "../../package.json"
+import packageJson from "../../package.json";
+import Link from "next/link";
 const appName = packageJson.name;
 
 export default function Header() {
@@ -15,16 +16,22 @@ export default function Header() {
         <div className="govgr-admin-header__container h-full">
           <div className="govgr-header__content">
             <a
-              className="govgr-header-link flex items-center"
+              className="govgr-header-link items-center max-w-[30%]"
               href="https://www.gov.gr/"
             >
               <Image
                 src={govGR}
-                className="max-w-[30%] my-auto"
+                className="my-auto w-full"
                 alt="gov.grlogo"
               />
-              <p className="font-bold text-white text-2xl capitalize">{appName}</p>
             </a>
+
+            <Link
+              href={"/"}
+              className="font-bold text-white text-2xl capitalize"
+            >
+              {appName}
+            </Link>
           </div>
         </div>
       </header>
