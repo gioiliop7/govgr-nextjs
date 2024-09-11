@@ -4,7 +4,7 @@ import Footer from "@/Components/Footer/Footer";
 export default function Login() {
   return (
     <div className="govgr-layout-wrapper govgr-layout-wrapper__full-height">
-        <Header/>
+      <Header />
       <div className="govgr-width-container">
         <div className="govgr-phase-banner govgr-phase-banner__underline">
           <p className="govgr-phase-banner__content">
@@ -42,7 +42,7 @@ export default function Login() {
           </main>
         </div>
       </div>
-    <Footer/>
+      <Footer />
     </div>
   );
 }
