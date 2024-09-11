@@ -4,7 +4,7 @@ import React from "react";
 
 const MyService = () => {
   return (
-    <div className="govgr-layout-wrapper">
+    <div className="govgr-layout-wrapper min-h-[100vh]">
       <Header />
       <div className="govgr-width-container">
         <div className="govgr-phase-banner govgr-phase-banner--underline"></div>
