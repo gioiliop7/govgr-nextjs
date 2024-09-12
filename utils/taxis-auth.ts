@@ -58,14 +58,13 @@ export async function handleTaxisCallback(
 export async function getUserProfile(
   token: string
 ): Promise<TaxisProfile | null> {
-  const userInfoUrl = `${baseURL}/userinfo?format=json`;
+  const userInfoUrl = `${baseURL}/userinfo?format=xml`;
 
   try {
     const response = await fetch(userInfoUrl, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
       },
     });
 
@@ -73,8 +72,39 @@ export async function getUserProfile(
       throw new Error("Failed to fetch user profile");
     }
 
-    const data = await response.json();
-    return data.userinfo || null;
+    // Get the raw XML response as a string
+    const xmlString = await response.text();
+
+    // Parse the XML string into a DOM Document
+    const parser = new DOMParser();
+    const xmlDoc = parser.parseFromString(xmlString, "application/xml");
+
+    // Convert the XML userinfo element into a JSON-like object
+    const userInfoElement = xmlDoc.querySelector("userinfo");
+
+    if (!userInfoElement) {
+      throw new Error("userinfo element not found in XML response");
+    }
+
+    // Create an object of type TaxisProfile
+    const taxisProfile: TaxisProfile = {
+      taxid: userInfoElement.getAttribute("taxid") || "",
+      userid: userInfoElement.getAttribute("userid") || "",
+      firstname: userInfoElement.getAttribute("firstname") || undefined,
+      lastname: userInfoElement.getAttribute("lastname") || undefined,
+      fathername: userInfoElement.getAttribute("fathername") || undefined,
+      mothername: userInfoElement.getAttribute("mothername") || undefined,
+      birthyear: userInfoElement.getAttribute("birthyear") || undefined,
+    };
+
+    // Add any additional attributes dynamically
+    for (const attr of Array.from(userInfoElement.attributes)) {
+      if (!(attr.name in taxisProfile)) {
+        taxisProfile[attr.name] = attr.value;
+      }
+    }
+
+    return taxisProfile;
   } catch (error) {
     console.error("Error fetching user profile:", error);
     return null;
