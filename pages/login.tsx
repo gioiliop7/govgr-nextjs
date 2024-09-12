@@ -2,6 +2,11 @@ import Header from "@/Components/Header/Header";
 import Footer from "@/Components/Footer/Footer";
 
 export default function Login() {
+
+  function redirectToTaxis(){
+    window.location.href = '/taxis-login';
+  }
+
   return (
     <div className="govgr-layout-wrapper govgr-layout-wrapper__full-height">
       <Header />
@@ -28,7 +33,10 @@ export default function Login() {
             <p className="govgr-body">
               You need to login in order to continue.
             </p>
-            <button className="govgr-btn govgr-btn-primary govgr-btn-cta">
+            <button
+              onClick={() => redirectToTaxis()}
+              className="govgr-btn govgr-btn-primary govgr-btn-cta"
+            >
               Login
               <svg
                 viewBox="0 0 24 24"
