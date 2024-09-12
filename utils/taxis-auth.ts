@@ -1,4 +1,5 @@
 import { TaxisProfile } from "./types";
+import { signIn } from "next-auth/react";
 
 // Environment variables or configuration
 
@@ -114,10 +115,33 @@ export async function getUserProfile(
 /**
  * Programmatically log in the user
  */
-function programmaticLogin(userProfile: TaxisProfile): void {
-  // Example: Store user data in session storage or perform login action
-}
+async function programmaticLogin(userProfile: TaxisProfile): Promise<void> {
+  // Example stores data in local storage
+  // Call the NextAuth signIn function
+  // Pass in the TaxisNet provider and the user profile details
+  try {
+    // NextAuth expects an 'OAuth' provider and appropriate credentials
+    // For custom providers, you might need to use an OAuth token or other means
+    const result = await signIn("taxis", {
+      redirect: false, // Use false if you want to handle redirection manually
+      user: {
+        id: userProfile.userid,
+        name: `${userProfile.firstname} ${userProfile.lastname}`.trim(),
+        // Add other properties if necessary
+      },
+    });
 
+    if (result?.error) {
+      console.error("Error logging in:", result.error);
+    } else {
+      console.log("Login successful:", result);
+      // Optionally redirect or handle successful login here
+      window.location.href = "/"; // Redirect to the homepage or another page
+    }
+  } catch (error) {
+    console.error("Error in programmatic login:", error);
+  }
+}
 /**
  * Example function to handle the TaxisNet OAuth process
  */
