@@ -10,7 +10,7 @@ const roboto = Roboto({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      <div className={roboto.className}>
+      <div className={`${roboto.className}`}>
         <Component {...pageProps} />
       </div>
     </>

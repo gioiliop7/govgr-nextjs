@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@digigov/css": "^0.37.0",
+    "@digigov/theme-govgr-dark": "^2.0.0-rc.17",
     "@types/node": "20.3.1",
     "@types/react": "18.2.12",
     "@types/react-dom": "18.2.5",
