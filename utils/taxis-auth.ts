@@ -82,7 +82,7 @@ export async function getUserProfile(
 }
 
 /**
- * Programmatically log in the user (non-WordPress example)
+ * Programmatically log in the user
  */
 function programmaticLogin(userProfile: TaxisProfile): void {
   // Example: Store user data in session storage or perform login action
@@ -95,10 +95,7 @@ export async function taxisOAuth(): Promise<void> {
   const urlParams = new URLSearchParams(window.location.search);
   const code = urlParams.get("code");
 
-  if (!code) {
-    redirectToTaxisLogin();
-    return;
-  }
+  if (!code) return;
 
   const accessToken = await handleTaxisCallback(code);
 
