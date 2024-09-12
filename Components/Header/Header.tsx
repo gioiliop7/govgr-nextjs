@@ -31,7 +31,7 @@ export default function Header() {
       </Head>
       <header className="govgr-header w-full min-h-[75px]" role="banner">
         <div className="govgr-admin-header__container h-full">
-          <div className="govgr-header__content flex justify-between items-center">
+          <div className="govgr-header__content flex items-center">
             <a
               className="govgr-header-link items-center max-w-[30%]"
               href="https://www.gov.gr/"
